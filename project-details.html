@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Academic Engineering Research Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --detail-bg: #f8fafc;
+            --detail-card: #ffffff;
+        }
+
+        body {
+            background-color: var(--detail-bg);
+        }
+
+        .detail-page-wrapper {
+            padding: 120px 0 80px;
+        }
+
+        .detail-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            padding: 8px 16px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Layout Grid */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 50px;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .detail-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .detail-meta {
+                gap: 15px;
+                padding: 16px;
+            }
+
+            .detail-card {
+                padding: 24px;
+            }
+
+            .detail-description p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Content Blocks */
+        .detail-card {
+            background: var(--detail-card);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .detail-header h1 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            color: var(--secondary);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Meta Metadata */
+        .detail-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding: 24px;
+            background: #f1f5f9;
+            border-radius: 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .meta-value {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        /* Main Image */
+        .detail-image-box {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            background: black;
+            border: 1px solid var(--border-light);
+            aspect-ratio: 16/9;
+        }
+
+        .detail-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .detail-image-box:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Typography */
+        .detail-description h2 {
+            font-size: 1.6rem;
+            margin: 40px 0 20px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .detail-description h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .detail-description p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .detail-description ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .detail-description li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-box {
+            background: var(--detail-card);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sidebar-box h3 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .tech-tag {
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+
+        .cta-box {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .cta-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        /* Loading State */
+        #project-loading {
+            text-align: center;
+            padding: 100px 0;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚙️</span>
+                <div class="logo-text">
+                    <span class="brand">AKIP</span>
+                    <span class="tagline">Engineering Research</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="index.html#contact" class="btn btn-nav">Get Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="detail-page-wrapper">
+        <div class="detail-container">
+            <a href="projects.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Back to Project Catalog
+            </a>
+
+            <div id="project-loading">Retrieving Project Specification...</div>
+
+            <div id="project-display" style="display: none;">
+                <div class="detail-grid">
+                    <div class="detail-content">
+                        <div class="detail-card">
+                            <div class="detail-header">
+                                <h1 id="p-title">Project Title</h1>
+                                <div class="detail-meta">
+                                    <div class="meta-item">
+                                        <span class="meta-label">Domain</span>
+                                        <span class="meta-value" id="p-domain">Embedded Systems</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span class="meta-label">Classification</span>
+                                        <span class="meta-value">Technical Implementation</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span class="meta-label">Reference ID</span>
+                                        <span class="meta-value" id="p-id">#PROJECT-001</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="detail-image-box">
+                                <img id="p-image" src="" alt="Project Visual">
+                            </div>
+
+                            <div class="detail-description">
+                                <h2>Project Abstract</h2>
+                                <p id="p-description">Full project overview content goes here.</p>
+
+                                <h2>System Architecture</h2>
+                                <p id="p-architecture">Details about the technical implementation, hardware-software
+                                    integration, and core logic.</p>
+
+                                <h2>Standard Deliverables</h2>
+                                <ul id="p-deliverables">
+                                    <li>Complete Technical Specification Document</li>
+                                    <li>Hardware Circuit & Interfacing Schematics</li>
+                                    <li>Optimized Source Code with Documentation</li>
+                                    <li>Implementation & Presentation Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="sidebar-box">
+                            <h3>Technology Stack</h3>
+                            <div class="tech-list" id="p-tech">
+                                <!-- Tags will be injected here -->
+                            </div>
+
+                            <div class="cta-box">
+                                <h3>Engagement Support</h3>
+                                <p class="cta-text">We provide comprehensive guidance for this specific research
+                                    implementation, ensuring end-to-end technical support and academic excellence.</p>
+                                <a href="index.html#contact" class="btn btn-primary btn-full">Request Full Synopsis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">⚙️</span>
+                    <span class="brand" style="color: white;">AKIP</span>
+                </a>
+                <p>Advanced Knowledge & Implementation Partnership. Providing elite academic guidance for engineering
+                    excellence.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Project Catalog</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: contact@akipresearch.com</p>
+                <p>Phone: +91 93240 76361</p>
+                <p>Location: Mumbai & Noida (Virtual Support Pan-India)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Project Data Object
+        const projectData = {
+            'voice-home': {
+                title: 'Voice-Interactive Microcontroller-based Home Automation System',
+                domain: 'Embedded Systems & IoT',
+                id: 'EMB-IOT-01',
+                image: 'images/voice_home_automation.png',
+                description: 'This project focuses on creating a seamless interface between natural language processing and hardware control. By utilizing advanced speech recognition modules and secure cloud communication, users can control residential appliances with high precision and reliability.',
+                architecture: 'Built on a high-performance microcontroller platform, the system integrates a multi-channel relay board for high-voltage isolation. The voice logic is handled via a dedicated processing unit that decodes intent and translates it into GPIO triggers for real-time response.',
+                tech: ['Embedded C', 'Microcontroller', 'Relay Logic', 'Voice API', 'Wi-Fi Telemetry']
+            },
+            'biomedical-telemetry': {
+                title: 'Real-time Biomedical Health Telemetry System for Critical Monitoring',
+                domain: 'Embedded Systems & IoT',
+                id: 'EMB-IOT-02',
+                image: 'images/biomedical_telemetry_system.png',
+                description: 'A research-grade health monitoring solution designed for precision data acquisition. It tracks vital parameters like Heart Rate (BPM) and Blood Oxygen Saturation (SpO2) with clinical accuracy, providing a baseline for telemedicine research.',
+                architecture: 'The system utilizes the MAX30102 high-sensitivity pulse oximetry sensor interfaced via I2C protocol. Data is processed through an optimized signal conditioning pipeline to filter noise, then transmitted via Bluetooth/Wi-Fi to a centralized dashboard for real-time visualization.',
+                tech: ['I2C Protocol', 'Signal Processing', 'MAX30102', 'Bluetooth Smart', 'OLED UI']
+            },
+            'smart-waste': {
+                title: 'Intelligent Urban Waste Management System with Cloud Connectivity',
+                domain: 'Embedded Systems & IoT',
+                id: 'EMB-IOT-03',
+                image: 'images/smart_waste_system.png',
+                description: 'Designed for smart city infrastructure, this system optimizes waste collection logistics by monitoring bin fill levels in real-time. It aims to reduce operational costs and carbon emissions associated with unnecessary collection trips.',
+                architecture: 'Ultrasonic transduction sensors measure the distance to the waste surface within the bin. The data is aggregated by a low-power wireless node and pushed to a cloud-based logistics engine that calculates the most efficient collection route using vehicle density data.',
+                tech: ['IoT Telemetry', 'Ultrasonic Sensors', 'Cloud MQTT', 'Logistics API']
+            },
+            'smart-irrigation': {
+                title: 'Automated Intelligent Irrigation Control System with Soil Nutrient Analytics',
+                domain: 'Embedded Systems & IoT',
+                id: 'EMB-IOT-04',
+                image: 'images/smart_irrigation_system.png',
+                description: 'A transformative agricultural technology project that automates water resource management based on real-time soil chemistry and moisture levels. It ensures optimal crop health while minimizing water wastage.',
+                architecture: 'Features a multi-sensor array including NPK (Nitrogen, Phosphorus, Potassium) sensors and capacitive moisture probes. The central control unit implements a PID logic to regulate submersible pumps and solenoid valves based on pre-defined crop-optimal thresholds.',
+                tech: ['Agricultural IoT', 'Soil Analytics', 'PID Control', 'Sensors', 'Automation']
+            },
+            'wireless-sensor': {
+                title: 'Distributed Wireless Sensor Network for Environmental Parameter Monitoring',
+                domain: 'Embedded Systems & IoT',
+                id: 'EMB-IOT-05',
+                image: 'images/wireless_sensor_network.png',
+                description: 'Research implementation of a mesh-capable sensor network for large-scale environmental monitoring. Each node independently measures parameters and routes data to a central gateway for cloud uplink.',
+                architecture: 'Built using low-power radio modules (LoRa/NRF24), the network implements a star-mesh topology. Data from multiple sensor nodes (Temp/Hum/Light) is aggregated by a Gateway Node which performs edge-processing before vertical integration with cloud services.',
+                tech: ['Wireless Communication', 'Star-Mesh Topology', 'Edge Computing', 'Sensors', 'Data Logging']
+            },
+            'biometric-access': {
+                title: 'Biometric Authentication & Access Control System using Multi-Factor Verification',
+                domain: 'Embedded Systems & IoT',
+                id: 'EMB-IOT-06',
+                image: 'images/biometric_access_control.png',
+                description: 'A high-security embedded implementation focusing on multi-layered identity verification. It combines physiological biometrics with physical token verification for mission-critical access control research.',
+                architecture: 'Integrates high-precision optical fingerprint scanning and RFID token reading. The core logic implements a Boolean verification gate (Biometric AND/OR Token) and drives a high-torque solenoid locking mechanism through an opto-isolated relay interface.',
+                tech: ['Biometrics', 'RFID Interfacing', 'Relay Control', 'LCD Logic', 'State Machine']
+            },
+            'traffic-management': {
+                title: 'Intelligent Traffic Congestion Management System using Vehicle Density Sensing',
+                domain: 'Embedded Systems & IoT',
+                id: 'EMB-IOT-07',
+                image: 'images/traffic_management_system.png',
+                description: 'An AI-driven hardware solution for urban traffic optimization. The system dynamically adjusts signaling intervals based on real-time vehicle density at multi-lane intersections.',
+                architecture: 'Utilizes an array of IR density sensors at intersection approaches to calculate traffic load. A weighted-round-robin algorithm (or simple priority queue) in the microcontroller dynamically allocates Green Light duration to lanes with the highest congestion, significantly reducing idle time.',
+                tech: ['Density Analytics', 'Timing Algorithms', 'IR Sensing', 'Traffic Logic', 'Microcontroller']
+            },
+            'diabetic-retinopathy': {
+                title: 'Early Detection of Diabetic Retinopathy using Convolutional Neural Networks',
+                domain: 'AI / Deep Learning',
+                id: 'AI-ML-01',
+                image: 'images/diabetic_retinopathy.png',
+                description: 'A medical-grade AI project focusing on automated diagnosis from retinal fundus images. This implementation aims to provide early detection of diabetic complications in patients using deep learning.',
+                architecture: 'Leverages a Transfer Learning approach with the ResNet-50 architecture. The model is trained on the Kaggle APTOS dataset, utilizing advanced image augmentation, normalization, and class-weightbalancing to achieve high sensitivity and specificity in grading retinopathy severity.',
+                tech: ['Python', 'TensorFlow/Keras', 'Computer Vision', 'Medical Imaging', 'Data Augmentation']
+            },
+            'supply-chain': {
+                title: 'Decentralized Supply Chain Management System with Real-Time Tracking',
+                domain: 'Web Development',
+                id: 'WEB-DEV-01',
+                image: 'images/supply_chain.png',
+                description: 'A robust web implementation designed to provide transparency and traceability across complex supply chains. It ensures item authenticity and provides stakeholder accountability via a secure decentralized ledger.',
+                architecture: 'Built with a modern MERN stack. Features a comprehensive dashboard for producers, distributors, and retailers. Implementing role-based authentication and a RESTful API architecture for real-time status updates and geographical tracking of assets.',
+                tech: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Cloud Infrastructure']
+            },
+            'smart-energy': {
+                title: 'Smart Industrial Energy Monitoring & Optimization System',
+                domain: 'Embedded Systems & IoT',
+                id: 'EMB-IOT-FEAT',
+                image: 'images/smart_energy.png',
+                description: 'A flagship industrial IoT project for monitoring high-power electrical systems. It provides real-time insights into energy consumption, power factor, and load balancing for industrial efficiency.',
+                architecture: 'Integrates non-invasive CT sensors and potential transformers to measure voltage and current waveforms. A dedicated energy monitoring IC or microcontroller logic performs real-time power calculations (Apparent, Active, Reactive) and pushes data to a secure web dashboard via MQTT.',
+                tech: ['Energy Analytics', 'Industrial IoT', 'Sensors', 'Dashboard UI', 'Firmware Engineering']
+            },
+            'face-recognition': {
+                title: 'Face Recognition Attendance System with Anti-Spoofing',
+                domain: 'Artificial Intelligence & Machine Learning',
+                id: 'AI-ML-02',
+                image: 'images/face_recognition.png',
+                description: 'A high-precision attendance management solution utilizing advanced computer vision. It implements liveness detection to prevent spoofing attacks using photographs or videos.',
+                architecture: 'Utilizes the MTCNN algorithm for face detection and FaceNet for feature extraction. The anti-spoofing layer analyzes eye-blink patterns and texture gradients to verify subject presence before logging attendance via a secure local database.',
+                tech: ['OpenCV', 'FaceNet', 'MTCNN', 'TensorFlow', 'Python']
+            },
+            'stock-prediction': {
+                title: 'Stock Market Price Prediction using LSTM & Sentiment Analysis',
+                domain: 'Artificial Intelligence & Machine Learning',
+                id: 'AI-ML-03',
+                image: 'images/stock_prediction.png',
+                description: 'A hybrid forecasting model that combines quantitative historical price data with qualitative news sentiment to predict stock market trends with improved accuracy.',
+                architecture: 'Employs a Long Short-Term Memory (LSTM) network for time-series forecasting. Simultaneously, a BERT-based NLP model analyzes financial news headlines to calculate sentiment scores, which are fused into the final prediction layer for multi-factor trend analysis.',
+                tech: ['LSTM', 'BERT NLP', 'Pandas', 'Matplotlib', 'Scikit-Learn']
+            },
+            'traffic-ai': {
+                title: 'Traffic Sign Classification for Autonomous Vehicles',
+                domain: 'Artificial Intelligence & Machine Learning',
+                id: 'AI-ML-04',
+                image: 'images/traffic_ai.png',
+                description: 'A critical component for autonomous driving systems, this project implements a robust recognition pipeline for international traffic signage under various environmental conditions.',
+                architecture: 'Developed using a deep Convolutional Neural Network (CNN) trained on the GTSRB dataset. The implementation includes custom preprocessing filters for low-light and rainy-day scenarios, ensuring reliable classification for ADAS (Advanced Driver Assistance Systems).',
+                tech: ['CNN Architecture', 'Computer Vision', 'Data Augmentation', 'CUDA Acceleration']
+            },
+            'voice-assistant': {
+                title: 'Voice-Based Virtual Assistant for Desktop Automation',
+                domain: 'Artificial Intelligence & Machine Learning',
+                id: 'AI-ML-05',
+                image: 'images/voice_assistant.png',
+                description: 'An intelligent desktop automation layer that translates natural language commands into system-level operations, enhancing productivity through hands-free interaction.',
+                architecture: 'Integrates Google Speech-to-Text for transcription and a custom intent-parsing engine. It utilizes the PyAutoGUI and Subprocess modules to interface with terminal commands and web browsers, providing a seamless bridge between speech and software execution.',
+                tech: ['Speech Recognition', 'NLP Intent Parsing', 'Python Shell Scripting', 'API Integration']
+            },
+            'e-learning': {
+                title: 'E-Learning Platform with Video Streaming and Progress Tracking',
+                domain: 'Web Development',
+                id: 'WEB-DEV-02',
+                image: 'images/e-learning.png',
+                description: 'A comprehensive educational ecosystem designed for institutional knowledge delivery. It provides a structured environment for course management, video streaming, and student assessment.',
+                architecture: 'Architected with React for the frontend and a scalable Node.js backend. Video delivery is optimized via CDN integration, and student progress is tracked through a relational database schema designed for high-concurrency access and detailed analytics.',
+                tech: ['React.js', 'Node.js', 'Express', 'SQL/NoSQL', 'Video Streaming Protocols']
+            },
+            'hospital-mgmt': {
+                title: 'Hospital Management & Patient Portal System',
+                domain: 'Web Development',
+                id: 'WEB-DEV-03',
+                image: 'images/hospital_mgmt.png',
+                description: 'A digitized healthcare infrastructure solution that streamlines patient records, appointment scheduling, and doctor-patient interactions within a secure HIPAA-compliant framework.',
+                architecture: 'Features a modular architecture with dedicated portals for patients, doctors, and administrators. Implements secure JWT-based authentication and a centralized record management system that ensures data integrity and high availability for critical care settings.',
+                tech: ['Full-stack JavaScript', 'Cloud Database', 'Secure Auth', 'Analytics Dashboard']
+            },
+            'online-auction': {
+                title: 'Online Auction System with Real-Time Bidding',
+                domain: 'Web Development',
+                id: 'WEB-DEV-04',
+                image: 'images/online_auction.png',
+                description: 'A high-concurrency auction engine designed for real-time synchronization between global participants. It ensures fair bidding and instant results through low-latency communication.',
+                architecture: 'Utilizes Socket.io for bidirectional real-time communication. The bidding engine implements an atomic transaction handler to prevent race conditions during high-speed bids, and the timer synchronization is maintained through a server-authoritative clock system.',
+                tech: ['WebSockets', 'Socket.io', 'Node.js', 'Concurrent Processing']
+            },
+            'cloud-storage': {
+                title: 'Cloud-Based File Storage and Sharing Application',
+                domain: 'Web Development',
+                id: 'WEB-DEV-05',
+                image: 'images/cloud_storage.png',
+                description: 'A secure cloud-native storage solution focusing on data encryption and seamless collaborative sharing. It provides a reliable alternative for institutional data archiving.',
+                architecture: 'Implements AES-256 encryption for data at rest and TLS for data in transit. The application utilizes a microservices architecture for handling file uploads, metadata management, and link generation, ensuring scalability and fault tolerance.',
+                tech: ['Cloud Architecture', 'Cryptography', 'Microservices', 'API Design']
+            },
+            'resume-screening': {
+                title: 'Automated Resume Screening System',
+                domain: 'Web Development',
+                id: 'WEB-DEV-06',
+                image: 'images/resume_screening.png',
+                description: 'An AI-enhanced recruitment tool that automates the initial screening of candidate resumes based on institutional skill requirements and academic benchmarks.',
+                architecture: 'Utilizes a Natural Language Processing (NLP) pipeline to extract semantic meaning from diverse resume formats. The ranking engine uses a cosine-similarity algorithm to match candidate profiles against specific job descriptions, significantly reducing the HR overhead.',
+                tech: ['NLP', 'Resource Management', 'Cosine Similarity', 'Automation']
+            },
+            'task-management': {
+                title: 'Collaborative Task Management Tool',
+                domain: 'Web Development',
+                id: 'WEB-DEV-07',
+                image: 'images/task_management.png',
+                description: 'A high-performance productivity platform designed for engineering teams. It facilitates agile project management and real-time team collaboration with visual project tracking.',
+                architecture: 'Features a Kanban-style interface powered by a drag-and-drop React framework. The backend manages complex team hierarchies and provides real-time notifications for task updates, ensuring seamless coordination across multi-disciplinary research groups.',
+                tech: ['React Kanban', 'Real-time Collaboration', 'Team Workflow', 'Project Tracking']
+            },
+            'plant-disease': {
+                title: 'Plant Disease Detection from Leaf Images',
+                domain: 'Artificial Intelligence & Machine Learning',
+                id: 'AI-ML-06',
+                image: 'images/plant_disease.png',
+                description: 'An automated agricultural diagnostic tool using deep learning to identify crop diseases from leaf captures. It enables early intervention and precise resource allocation for farmers.',
+                architecture: 'Employs a MobileNetV2 architecture fine-tuned for leaf-level feature extraction. The model is optimized for mobile deployment, using a reduced parameter set to maintain high inference speeds on edge devices for real-time field analysis.',
+                tech: ['Deep Learning', 'MobileNetV2', 'TensorFlow Lite', 'Agriculture Tech', 'Image Analytics']
+            },
+            'customer-churn': {
+                title: 'Customer Churn Prediction for Telecom Sector',
+                domain: 'Artificial Intelligence & Machine Learning',
+                id: 'AI-ML-07',
+                image: 'images/customer_churn.png',
+                description: 'A predictive analytics implementation designed to identify at-risk customers in the telecommunications industry using historical usage patterns and behavioral data.',
+                architecture: 'Utilizes an ensemble of Decision Trees and Random Forests to analyze high-dimensional customer data. Features an automated preprocessing pipeline for missing value imputation and feature scaling before classification to ensure model robustness.',
+                tech: ['Scikit-Learn', 'Ensemble Learning', 'Predictive Analytics', 'Data Mining', 'Python']
+            }
+        };
+
+        function loadProject() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+
+            if (projectId && projectData[projectId]) {
+                const data = projectData[projectId];
+                document.getElementById('p-title').textContent = data.title;
+                document.getElementById('p-domain').textContent = data.domain;
+                document.getElementById('p-id').textContent = '#' + data.id;
+                const displayImage = document.getElementById('p-image');
+                displayImage.src = data.image;
+
+                // Technical color correction for Supply Chain Dashboard
+                if (projectId === 'supply-chain') {
+                    displayImage.classList.add('color-shift-blue');
+                } else {
+                    displayImage.classList.remove('color-shift-blue');
+                }
+                document.getElementById('p-description').textContent = data.description;
+                document.getElementById('p-architecture').textContent = data.architecture;
+
+                const techList = document.getElementById('p-tech');
+                techList.innerHTML = '';
+                data.tech.forEach(t => {
+                    const tag = document.createElement('span');
+                    tag.className = 'tech-tag';
+                    tag.textContent = t;
+                    techList.appendChild(tag);
+                });
+
+                document.getElementById('project-loading').style.display = 'none';
+                document.getElementById('project-display').style.display = 'block';
+            } else {
+                document.getElementById('project-loading').innerHTML = '<h2>Project Not Found</h2><p>Please return to the <a href="projects.html">catalog</a> to view our active research projects.</p>';
+            }
+        }
+
+        window.onload = loadProject;
+    </script>
+</body>
+
+</html>

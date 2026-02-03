@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Complete list of engineering projects in AI, Web, and IoT available for academic guidance and implementation.">
+        content="Complete list of engineering projects in AI || Web || IoT available for academic guidance and implementation.">
     <title>Project Catalog | Engineering Project Guidance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +20,17 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Engg.<span class="highlight">Guidance</span></a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚙️</span>
+                <div class="logo-text">
+                    <span class="brand">AKIP</span>
+                    <span class="tagline">Engineering Research</span>
+                </div>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html" class="active">All Projects</a></li>
-                <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
+                <li><a href="index.html#contact" class="btn-nav">Get Consultation</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -54,69 +60,63 @@
                 </div>
                 <div class="project-list">
                     <!-- Item 1 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=face-recognition'">
+                        <div class="item-visual">
+                            <img src="images/face_recognition.png" alt="Face Recognition Scan">
+                        </div>
                         <div class="item-content">
                             <h3>Face Recognition Attendance System with Anti-Spoofing</h3>
                             <p>Real-time attendance logging using OpenCV and Liveness detection.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 2 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=stock-prediction'">
+                        <div class="item-visual">
+                            <img src="images/stock_prediction.png" alt="Stock Market Charts">
+                        </div>
                         <div class="item-content">
                             <h3>Stock Market Price Prediction using LSTM & Sentiment Analysis</h3>
                             <p>Hybrid model combining historical data and news sentiment for trend forecasting.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 3 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=traffic-ai'">
+                        <div class="item-visual">
+                            <img src="images/traffic_ai.png" alt="Traffic Signs on Road">
+                        </div>
                         <div class="item-content">
                             <h3>Traffic Sign Classification for Autonomous Vehicles</h3>
                             <p>CNN-based recognition system for driver assistance technology.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 4 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=voice-assistant'">
+                        <div class="item-visual">
+                            <img src="images/voice_assistant.png" alt="Smart Speaker Voice Assistant">
+                        </div>
                         <div class="item-content">
                             <h3>Voice-Based Virtual Assistant for Desktop Automation</h3>
                             <p>NLP-driven assistant capable of executing system commands and web queries.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 5 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=plant-disease'">
+                        <div class="item-visual">
+                            <img src="images/plant_disease.png" alt="Macro Leaf Disease">
+                        </div>
                         <div class="item-content">
                             <h3>Plant Disease Detection from Leaf Images</h3>
                             <p>Mobile-compatible model for agricultural health monitoring.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 6 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=customer-churn'">
+                        <div class="item-visual">
+                            <img src="images/customer_churn.png" alt="Customer Data Analytics">
+                        </div>
                         <div class="item-content">
                             <h3>Customer Churn Prediction for Telecom Sector</h3>
                             <p>Data mining implementation using Decision Trees and Random Forest.</p>
-                        </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
                         </div>
                     </div>
                 </div>
@@ -130,69 +130,73 @@
                 </div>
                 <div class="project-list">
                     <!-- Item 1 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=supply-chain'">
+                        <div class="item-visual">
+                            <img src="images/supply_chain.png" class="color-shift-blue" alt="Supply Chain Dashboard">
+                        </div>
+                        <div class="item-content">
+                            <h3>Decentralized Supply Chain Management System with Real-Time Tracking</h3>
+                            <p>Secure transparency and item traceability implementation using MERN stack.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=e-learning'">
+                        <div class="item-visual">
+                            <img src="images/e_learning.png" alt="E-Learning">
+                        </div>
                         <div class="item-content">
                             <h3>E-Learning Platform with Video Streaming and Progress Tracking</h3>
                             <p>Full-stack education portal with user roles and content management.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 2 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=hospital-mgmt'">
+                        <div class="item-visual">
+                            <img src="images/hospital_mgmt.png" alt="Hospital Reception Desk">
+                        </div>
                         <div class="item-content">
                             <h3>Hospital Management & Patient Portal System</h3>
                             <p>Digital record keeping, appointment scheduling, and doctor availability tracking.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 3 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=online-auction'">
+                        <div class="item-visual">
+                            <img src="images/online_auction.png" alt="Auction Gavel">
+                        </div>
                         <div class="item-content">
                             <h3>Online Auction System with Real-Time Bidding</h3>
                             <p>Socket-based bidding platform with timer synchronization.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 4 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=cloud-storage'">
+                        <div class="item-visual">
+                            <img src="images/cloud_storage.png" alt="Cloud Data Center">
+                        </div>
                         <div class="item-content">
                             <h3>Cloud-Based File Storage and Sharing Application</h3>
                             <p>Secure file upload, encryption, and shareable link generation.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 5 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=resume-screening'">
+                        <div class="item-visual">
+                            <img src="images/resume_screening.png" alt="Resume Screening">
+                        </div>
                         <div class="item-content">
                             <h3>Automated Resume Screening System</h3>
                             <p>Web portal for HR to filter candidates based on keyword matching.</p>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
-                        </div>
                     </div>
                     <!-- Item 6 -->
-                    <div class="list-item">
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=task-management'">
+                        <div class="item-visual">
+                            <img src="images/task_management.png" alt="Task Management">
+                        </div>
                         <div class="item-content">
                             <h3>Collaborative Task Management Tool</h3>
                             <p>Kanban-style project board with team assignment features.</p>
-                        </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
                         </div>
                     </div>
                 </div>
@@ -201,52 +205,91 @@
             <!-- IoT Section -->
             <div class="category-block">
                 <div class="category-header">
-                    <h2>IoT & Smart Systems</h2>
+                    <h2>Embedded Systems & IoT</h2>
                     <div class="divider"></div>
                 </div>
                 <div class="project-list">
                     <!-- Item 1 -->
-                    <div class="list-item">
-                        <div class="item-content">
-                            <h3>Home Automation using Voice Commands (Google Assistant/Alexa)</h3>
-                            <p>Control appliances remotely via voice integration and NodeMCU.</p>
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=voice-home'">
+                        <div class="item-visual">
+                            <img src="images/voice_home_automation.png"
+                                alt="Voice-Interactive Home Automation Integration">
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
+                        <div class="item-content">
+                            <h3>Voice-Interactive Microcontroller-based Home Automation System</h3>
+                            <p>Advanced appliance control via natural language integration and secure cloud protocols.
+                            </p>
                         </div>
                     </div>
                     <!-- Item 2 -->
-                    <div class="list-item">
-                        <div class="item-content">
-                            <h3>Smart Health Monitoring Wearable Device</h3>
-                            <p>Real-time pulse and temperature tracking with emergency SMS alerts.</p>
+                    <div class="list-item"
+                        onclick="window.location.href='project-details.html?id=biomedical-telemetry'">
+                        <div class="item-visual">
+                            <img src="images/biomedical_telemetry_system.png"
+                                alt="Real-time Biomedical Health Telemetry System">
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
+                        <div class="item-content">
+                            <h3>Real-time Biomedical Health Telemetry System for Critical Monitoring</h3>
+                            <p>Precision health parameter tracking with automated emergency alert logic and cloud
+                                visualization.</p>
                         </div>
                     </div>
                     <!-- Item 3 -->
-                    <div class="list-item">
-                        <div class="item-content">
-                            <h3>IoT-Based Smart Garbage Monitoring System</h3>
-                            <p>Ultrasonic sensors to detect fill levels and optimize collection routes.</p>
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=smart-waste'">
+                        <div class="item-visual">
+                            <img src="images/smart_waste_system.png" alt="Intelligent Urban Waste Management Prototype">
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
+                        <div class="item-content">
+                            <h3>Intelligent Urban Waste Management System with Cloud Connectivity</h3>
+                            <p>Optimized logistics and fill-level monitoring using ultrasonic transduction and IoT
+                                telemetry.</p>
                         </div>
                     </div>
                     <!-- Item 4 -->
-                    <div class="list-item">
-                        <div class="item-content">
-                            <h3>Smart Irrigation System using Soil Moisture Sensors</h3>
-                            <p>Automated water pump control based on environmental conditions.</p>
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=smart-irrigation'">
+                        <div class="item-visual">
+                            <img src="images/smart_irrigation_system.png"
+                                alt="Automated Intelligent Irrigation Prototype">
                         </div>
-                        <div class="item-actions">
-                            <button class="btn-sm btn-outline">View details</button>
-                            <a href="index.html#contact" class="btn-sm btn-primary">Contact for guidance</a>
+                        <div class="item-content">
+                            <h3>Automated Intelligent Irrigation Control System with Soil Nutrient Analytics</h3>
+                            <p>Resource-efficient agricultural automation utilizing multi-sensor data fusion and
+                                moisture control.</p>
+                        </div>
+                    </div>
+                    <!-- New Item 5 -->
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=wireless-sensor'">
+                        <div class="item-visual">
+                            <img src="images/wireless_sensor_network.png"
+                                alt="Distributed Wireless Sensor Network Prototype">
+                        </div>
+                        <div class="item-content">
+                            <h3>Distributed Wireless Sensor Network for Environmental Parameter Monitoring</h3>
+                            <p>Multi-node environmental data acquisition system with centralized cloud analytics.</p>
+                        </div>
+                    </div>
+                    <!-- New Item 6 -->
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=biometric-access'">
+                        <div class="item-visual">
+                            <img src="images/biometric_access_control.png"
+                                alt="Biometric Authentication & Access Control Prototype">
+                        </div>
+                        <div class="item-content">
+                            <h3>Biometric Authentication & Access Control System using Multi-Factor Verification</h3>
+                            <p>High-security embedded implementation with biometric data processing and real-time
+                                logging.</p>
+                        </div>
+                    </div>
+                    <!-- New Item 7 -->
+                    <div class="list-item" onclick="window.location.href='project-details.html?id=traffic-management'">
+                        <div class="item-visual">
+                            <img src="images/traffic_management_system.png"
+                                alt="Intelligent Traffic Congestion Management Prototype">
+                        </div>
+                        <div class="item-content">
+                            <h3>Intelligent Traffic Congestion Management System using Vehicle Density Sensing</h3>
+                            <p>Dynamic signal control based on real-time traffic density analysis and cross-node
+                                communication.</p>
                         </div>
                     </div>
                 </div>
