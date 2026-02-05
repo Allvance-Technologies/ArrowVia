@@ -654,8 +654,8 @@ img {
 .contact-methods {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 60px;
+    margin-bottom: 50px;
     flex-wrap: wrap;
 }
 
@@ -674,14 +674,28 @@ img {
 }
 
 .contact-item .value {
-    color: white;
+    color: white !important;
     font-size: 1.25rem;
     font-weight: 600;
+    text-decoration: none;
     transition: color 0.2s;
 }
 
 .contact-item .value:hover {
-    color: var(--accent);
+    color: var(--accent) !important;
+}
+
+.contact-box .cta-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-box .cta-group .btn {
+    flex: 1;
+    min-width: 200px;
 }
 
 .white-btn {
