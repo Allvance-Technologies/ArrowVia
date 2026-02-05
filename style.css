@@ -253,16 +253,16 @@ img {
 
 .navbar .logo-img {
     mix-blend-mode: multiply;
+    height: 55px;
+    /* Scaled down significantly */
 }
 
 .logo-img {
-    height: 120px;
+    height: 55px;
     width: auto;
     display: block;
     transition: var(--transition);
     object-fit: contain;
-    margin: -25px -10px;
-    /* Crops extreme outer padding */
 }
 
 .nav-links {
