@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Page load transition
+    document.body.classList.add('loaded');
+
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -7,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('nav-active');
-            
-            // Hamburger Animation
             hamburger.classList.toggle('toggle');
         });
     }
@@ -26,30 +27,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            if (href.startsWith('#') && href.length > 1) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
 
-    // Simple interaction for "View details" buttons on Projects page
-    // Just alerts for now as per "Minimal JS" requirement, or could toggle visibility.
-    // Given the prompt didn't ask for a modal, we'll keep it simple or just let them be visual for now.
-    // I will add a simple console log to show intent.
-    const detailButtons = document.querySelectorAll('.list-item button');
-    detailButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Ideally this would open a modal or expand the row
-            // For this scope, we will just scroll to contact as a "CTA" behavior 
-            // since the user wants them to "Request a demo"
-            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            // Close other items if desired (optional)
+            // faqItems.forEach(otherItem => {
+            //     if (otherItem !== item) otherItem.classList.remove('active');
+            // });
+            item.classList.toggle('active');
         });
     });
+
+    // Lazy Loading polyfill support (optional, since we use native loading="lazy")
+    // Native lazy loading is supported in 90%+ of modern browsers.
 });

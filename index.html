@@ -21,7 +21,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.svg" alt="Arrowvia Technologies" class="logo-img">
+                <img src="images/logo.png" alt="Arrowvia Technologies" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
@@ -109,7 +109,8 @@
                 <!-- AI Project -->
                 <div class="project-card" onclick="window.location.href='project-details.html?id=diabetic-retinopathy'">
                     <div class="project-image">
-                        <img src="images/diabetic_retinopathy.png" alt="Diabetic Retinopathy Detection System">
+                        <img loading="lazy" src="images/diabetic_retinopathy.png"
+                            alt="Diabetic Retinopathy Detection System">
                     </div>
                     <div class="card-tag">AI / Deep Learning</div>
                     <h4>Early Detection of Diabetic Retinopathy using Convolutional Neural Networks</h4>
@@ -120,14 +121,16 @@
                         <span>Python</span><span>TensorFlow</span><span>OpenCV</span>
                     </div>
                     <div class="card-footer">
-                        <span class="live-status">● Live demo available on request</span>
+                        <span class="live-status">● Live demo available</span>
+                        <a href="project-details.html?id=diabetic-retinopathy" class="btn-demo-icon"
+                            title="View Demo">▶</a>
                     </div>
                 </div>
 
                 <!-- Web Project -->
                 <div class="project-card" onclick="window.location.href='project-details.html?id=supply-chain'">
                     <div class="project-image">
-                        <img src="images/supply_chain.png" class="color-shift-blue"
+                        <img loading="lazy" src="images/supply_chain.png" class="color-shift-blue"
                             alt="Supply Chain Management System">
                     </div>
                     <div class="card-tag">Web Development</div>
@@ -139,14 +142,15 @@
                         <span>React (Structure)</span><span>Node.js</span><span>MongoDB</span>
                     </div>
                     <div class="card-footer">
-                        <span class="live-status">● Live demo available on request</span>
+                        <span class="live-status">● Live demo available</span>
+                        <a href="project-details.html?id=supply-chain" class="btn-demo-icon" title="View Demo">▶</a>
                     </div>
                 </div>
 
                 <!-- IoT Project -->
                 <div class="project-card" onclick="window.location.href='project-details.html?id=smart-energy'">
                     <div class="project-image">
-                        <img src="images/smart_energy.png" alt="Smart Industrial Energy Monitoring">
+                        <img loading="lazy" src="images/smart_energy.png" alt="Smart Industrial Energy Monitoring">
                     </div>
                     <div class="card-tag">Embedded Systems & IoT</div>
                     <h4>Smart Industrial Energy Monitoring & Optimization System</h4>
@@ -157,13 +161,98 @@
                         <span>Embedded C</span><span>Arduino</span><span>Sensors</span><span>Web Dashboard</span>
                     </div>
                     <div class="card-footer">
-                        <span class="live-status">● Live demo available on request</span>
+                        <span class="live-status">● Live demo available</span>
+                        <a href="project-details.html?id=smart-energy" class="btn-demo-icon" title="View Demo">▶</a>
                     </div>
                 </div>
             </div>
 
             <div class="center-btn">
                 <a href="projects.html" class="btn btn-outline">View Complete Project List</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Mentorship Impact (Testimonials) -->
+    <section class="testimonials-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mentorship Impact</h2>
+                <p class="section-subtitle">What students say about our technical guidance.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The depth of hardware knowledge provided for my IoT project was
+                        incredible. The live demo gave me the confidence to ace my final viva."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Rahul S.</h5>
+                            <span>Final Year, ECE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Complex AI concepts were simplified perfectly. The report was
+                        professional and met all IEEE standards. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Priya K.</h5>
+                            <span>Computer Science Graduate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Professional documentation and prompt support. They didn't just give
+                        the code; they explained how every module functions."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Arjun M.</h5>
+                            <span>M.Tech Scholar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer IEEE standard base papers?</button>
+                    <div class="faq-answer">
+                        <p>Yes, all our projects are based on the latest IEEE research papers or industry standards. We
+                            provide the base paper along with the implementation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is source code walkthrough included?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely. We provide a complete line-by-line explanation of the code and hardware logic to
+                            ensure you are fully prepared for your academic presentation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can you customize a specific project?</button>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in customizing existing projects or building new ones as per your specific
+                            university requirements or research objectives.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you provide hardware components?</button>
+                    <div class="faq-answer">
+                        <p>We provide the complete circuit diagrams, component lists, and code. For local students,
+                            integrated hardware setups can be provided during the demo session.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -176,7 +265,6 @@
                 <p>Request a demo or discuss your specific project requirements with an expert.</p>
 
                 <div class="cta-group">
-                    <a href="mailto:contact@arrowvia.com" class="btn btn-primary white-btn">Email Inquiry</a>
                     <a href="https://wa.me/918526711688?text=Hello%20Arrowvia%20Technologies,%20I%20would%20like%20to%20discuss%20my%20engineering%20project."
                         target="_blank" class="btn btn-whatsapp">Chat on WhatsApp</a>
                 </div>
@@ -184,13 +272,15 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2024 Arrowvia Technologies. All Rights Reserved.</p>
-            <p class="small-text">Specialized in academic project mentorship and technical training.</p>
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>contact@arrowvia.com</p>
+            <span class="footer-separator">•</span>
+            <p>&copy; 2026 Arrowvia Technologies. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop" title="Go to top">↑</button>
     <script src="script.js"></script>
 </body>
 

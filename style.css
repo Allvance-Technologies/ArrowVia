@@ -104,7 +104,7 @@ img {
 }
 
 .section-padding {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .bg-light {
@@ -185,7 +185,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 110px;
+    height: 120px;
     display: flex;
     align-items: center;
     transition: var(--transition);
@@ -205,68 +205,35 @@ img {
     text-decoration: none;
 }
 
-.logo-icon {
-    background: var(--bg-body);
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    overflow: hidden;
-}
+
 
 .logo:hover .logo-img {
     transform: scale(1.05);
 }
 
-.logo-svg {
-    width: 28px;
-    height: 28px;
-}
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.brand {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--primary);
-    line-height: 1;
-    letter-spacing: -0.5px;
-}
-
-.tagline {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: var(--accent);
-    font-weight: 700;
-    margin-top: 4px;
-}
 
 .navbar .logo-img {
-    height: 95px;
-    /* Increased to fit the navbar perfectly */
+    height: 100px;
 }
 
 .logo-img {
-    height: 95px;
+    height: 100px;
     width: auto;
+    max-width: 320px;
     display: block;
     transition: var(--transition);
     object-fit: contain;
+    /* Handles white background */
+}
+
+.footer .logo-img {
+    height: 90px;
 }
 
 .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
 }
 
@@ -330,7 +297,7 @@ img {
 
 /* --- Hero Section --- */
 .hero {
-    padding: 120px 0 100px;
+    padding: 30px 0 60px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -364,7 +331,7 @@ img {
 .hero-tagline {
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -386,7 +353,7 @@ img {
     font-size: 1.25rem;
     color: var(--text-main);
     font-weight: 500;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .hero .section-subtitle {
@@ -407,7 +374,7 @@ img {
 .hero .description {
     font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     line-height: 1.7;
 }
 
@@ -453,7 +420,7 @@ img {
 /* --- Common Wrappers --- */
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .section-header h2 {
@@ -483,10 +450,12 @@ img {
 
 .domain-card {
     background: var(--bg-white);
-    padding: 40px 30px;
+    padding: 30px 24px;
     border-radius: 12px;
     border: 1px solid var(--border-light);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
     text-align: left;
 }
 
@@ -523,13 +492,13 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     /* Slightly wider min */
     gap: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .project-card {
     background: var(--bg-white);
     border-radius: 12px;
-    padding: 30px;
+    padding: 24px;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-light);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -607,19 +576,148 @@ img {
 }
 
 .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-top: 1px solid var(--border-light);
-    padding-top: 16px;
+    padding-top: 15px;
+    margin-top: auto;
 }
 
 .live-status {
     font-size: 0.85rem;
     color: #059669;
-    /* Green 600 */
     font-weight: 600;
+}
+
+.btn-demo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-demo-icon:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1);
+}
+
+.btn-demo-link {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 5px;
+    display: inline-block;
 }
 
 .center-btn {
     text-align: center;
+}
+
+
+/* --- Testimonials --- */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-info h5 {
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 2px;
+}
+
+.author-info span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- FAQ --- */
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: var(--secondary);
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 300px;
 }
 
 /* --- Contact Section --- */
@@ -693,8 +791,7 @@ img {
 }
 
 .contact-box .cta-group .btn {
-    flex: 1;
-    min-width: 200px;
+    min-width: 250px;
 }
 
 .white-btn {
@@ -710,29 +807,49 @@ img {
 }
 
 /* --- Footer --- */
-footer {
+.footer {
     background-color: #020617;
-    /* Very Dark Slate */
     color: #94a3b8;
-    padding: 40px 0;
-    text-align: center;
+    padding: 20px 10px;
     border-top: 1px solid #1e293b;
 }
 
-.footer-content p {
-    margin-bottom: 8px;
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    flex-wrap: wrap;
 }
 
-.small-text {
-    font-size: 0.85rem;
-    opacity: 0.8;
+.footer-bottom p {
+    margin: 0;
 }
+
+.footer-separator {
+    opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+}
+
+
 
 /* --- Projects Page Specifics --- */
 .page-header {
     background-color: rgba(15, 23, 42, 0.9);
     color: white;
-    padding: 80px 0;
+    padding: 60px 0;
     text-align: center;
     backdrop-filter: blur(5px);
 }
@@ -749,7 +866,7 @@ footer {
 }
 
 .category-block {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .category-header {
@@ -1045,5 +1162,52 @@ footer {
         .hero-content {
             padding-top: 40px;
         }
+
+        .navbar .logo-img {
+            height: 65px;
+        }
     }
+}
+
+/* --- Back to Top --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+    border: none;
+    font-size: 1.5rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* --- Page Transitions --- */
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+body.loaded {
+    opacity: 1;
 }
