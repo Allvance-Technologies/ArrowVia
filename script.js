@@ -40,23 +40,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Back to Top Button
-    const backToTopBtn = document.getElementById('backToTop');
-    if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
+    // --- Chatbot Logic ---
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const optionBtns = document.querySelectorAll('.option-btn');
+
+    if (chatbotToggle && chatbotWindow && chatbotMessages) {
+        const responses = {
+            ai: "We have over 50+ AI projects ranging from Computer Vision to NLP. You can view them in our catalog!",
+            iot: "Our IoT projects feature hardware-software integration with Arduino, ESP32, and Raspberry Pi. View the full list in the catalog!",
+            web: "We develop modern full-stack web applications using MERN and other advanced architectures. Check out our web archive!",
+            guidance: "Our guidance includes source code, project reports, PPTs, and viva preparation. We ensure you're fully ready.",
+            contact: "You can reach our experts directly via WhatsApp at +91 8526711688 for immediate assistance.",
+            specs: "This project follows IEEE standards and includes detailed technical documentation and architecture overview.",
+            delivery: "Standard delivery for academic projects is 3-7 days, including customization and documentation sessions."
+        };
+
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.classList.toggle('active');
         });
 
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        optionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const type = btn.getAttribute('data-type');
+                const userText = btn.textContent;
+
+                // Add user message
+                addMessage(userText, 'user');
+
+                // Add bot response with delay
+                setTimeout(() => {
+                    addMessage(responses[type], 'bot');
+                }, 600);
             });
         });
+
+        function addMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}`;
+            msgDiv.textContent = text;
+            chatbotMessages.appendChild(msgDiv);
+
+            // Scroll to bottom
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
     }
 
     // FAQ Accordion

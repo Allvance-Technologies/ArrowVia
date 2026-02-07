@@ -610,7 +610,30 @@
         }
         document.addEventListener('DOMContentLoaded', loadProject);
     </script>
-    <button class="back-to-top" id="backToTop" title="Go to top">↑</button>
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" id="chatbotToggle">
+            <span>💬</span>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="avatar">🤖</div>
+                <div>
+                    <h4>Arrowvia Assistant</h4>
+                    <span>Online | Research Expert</span>
+                </div>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    Need more details about this specific research implementation? Ask me anything!
+                </div>
+            </div>
+            <div class="chatbot-options" id="chatbotOptions">
+                <button class="option-btn" data-type="specs">View Specs</button>
+                <button class="option-btn" data-type="delivery">Delivery Time?</button>
+                <button class="option-btn" data-type="contact">Consult Expert</button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
