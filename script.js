@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
             guidance: "Our guidance includes source code, project reports, PPTs, and viva preparation. We ensure you're fully ready.",
             contact: "You can reach our experts directly via WhatsApp at +91 8526711688 for immediate assistance.",
             specs: "This project follows IEEE standards and includes detailed technical documentation and architecture overview.",
-            delivery: "Standard delivery for academic projects is 3-7 days, including customization and documentation sessions."
+            delivery: "Standard delivery for academic projects is 3-7 days, including customization and documentation sessions.",
+            custom: "Yes! We specialize in custom research implementations. Share your abstract or base paper via WhatsApp for a free feasibility check."
         };
 
         chatbotToggle.addEventListener('click', () => {
