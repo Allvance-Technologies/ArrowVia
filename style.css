@@ -218,11 +218,11 @@ img {
 
 
 .navbar .logo-img {
-    height: 110px;
+    height: 65px;
 }
 
 .logo-img {
-    height: 110px;
+    height: 65px;
     width: auto;
     max-width: 320px;
     display: block;
@@ -863,7 +863,7 @@ img {
 .page-header {
     background-color: rgba(15, 23, 42, 0.9);
     color: white;
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
     backdrop-filter: blur(5px);
 }
